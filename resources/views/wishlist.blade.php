@@ -89,22 +89,20 @@
                         <h3 class="wed-font-1 wed-color">Selecione uma Categoria:</h3>
                         <select name="" id="" class="form-control" required>
                             <option value="">Selecione uma Opção</option>
-                            <option value="">Cama, Mesa e Banho</option>
-                            <option value="">Decoração</option>
-                            <option value="">Eletrodomésticos</option>
-                            <option value="">Outros</option>
+                            @foreach ($wishlist as $w)
+                                <option value="">{{$w->category}}</option>
+                            @endforeach
                         </select>
-                </div>
-                <div class="category mb-3">
+                    </div>
+                    <div class="category mb-3">
                         <h3 class="wed-font-1 wed-color">Selecione um item e a quantidade:</h3>
                         <div class="row">
                             <div class="col-md-8">
                                 <select name="" id="" class="form-control" required>
                                     <option value="">Selecione uma Opção</option>
-                                    <option value="">Jogo de Toalha (R$ 50.00)</option>
-                                    <option value="">Seilá</option>
-                                    <option value="">Outra Coisa</option>
-                                    <option value="">Notebook</option>
+                                    @foreach ($wishlist as $w)
+                                    <option value="">{{$w->description}} ({{$w->price}})</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col">

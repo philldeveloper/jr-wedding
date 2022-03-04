@@ -16,10 +16,8 @@ Route::get('/', function () {
     return view('welcome', ['day' => '158']);
 });
 
-Route::get('/jr/wishlist', function () {
-    return view('wishlist');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/jr/wishlist', 'WishListController@index')->name('wishlist');
